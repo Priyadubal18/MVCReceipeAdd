@@ -10,7 +10,7 @@ export default class ProductBuyer extends React.Component {
         try {
             debugger;
             let response = await axios.get('/allRecipesList')
-            console.log(response.response);
+            console.log(response.data);
         } catch (ex) {
             console.log(ex);
         }
