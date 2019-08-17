@@ -1,12 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import axios from 'axios';
 
 export default class ProductBuyer extends React.Component {
     constructor() {
         super();
     }
+
+    async componentDidMount() {
+        try {
+            debugger;
+            let response = await axios.get('/allRecipesList')
+            console.log(response.response);
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
+
     render() {
-        return <h1>Hello, Priya,Good Job</h1>;
+        return <h1>Hello, Priya,Good Job. You be positive.</h1>;
     }
 
 }
