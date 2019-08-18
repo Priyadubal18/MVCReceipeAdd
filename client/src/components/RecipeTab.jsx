@@ -5,14 +5,13 @@ import StarRatingComponent from 'react-star-rating-component';
 
 export default class RecipeTab extends React.Component {
     constructor(props) {
-        debugger;
         super(props);
-        console.log(props);
     }
+
 
     render() {
         return (
-            <RecipePanel>
+            <RecipePanel onClick={this.props.recipeClick.bind(this, this.props.recipeInfo)}>
                 <RecipeImg src={this.props.recipeInfo.RecipeImageURL} />
                 <RecipeTiTle>{this.props.recipeInfo.RecipeTitle}</RecipeTiTle>
                 <RecipeReview>
@@ -26,6 +25,7 @@ export default class RecipeTab extends React.Component {
                     <RecipeReviewCount>({this.props.recipeInfo.NoOfReview})</RecipeReviewCount>
                 </RecipeReview>
             </RecipePanel>
+
         );
     }
 

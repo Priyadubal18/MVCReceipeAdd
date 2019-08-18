@@ -34,7 +34,7 @@ export const RecipeTiTle = styled.p`
   text-align:center
 `;
 
-export const RecipeReview = styled.p`
+export const RecipeReview = styled.div`
   color:white
   background-color:#000000b5;
   font-size: 18px;

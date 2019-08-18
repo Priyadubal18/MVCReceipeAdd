@@ -9,6 +9,7 @@ export default class RecipeJar extends React.Component {
         this.state = {
             RecipeList: []
         }
+        this.recipeTabClick = this.recipeTabClick.bind(this);
     }
 
     async componentDidMount() {
@@ -24,6 +25,11 @@ export default class RecipeJar extends React.Component {
         }
     }
 
+    recipeTabClick(recipe) {
+        debugger;
+        console.log(recipe);
+    }
+
     render() {
         return (
             <div>
@@ -31,7 +37,7 @@ export default class RecipeJar extends React.Component {
                 {
                     this.state.RecipeList.length > 0 ?
                         this.state.RecipeList.map((recipe, index) => (
-                            <RecipeTab key={index} recipeInfo={recipe} />
+                            <RecipeTab key={index} recipeInfo={recipe} recipeClick={this.recipeTabClick} > </RecipeTab>
                         )) : <p>Loading...</p>
                 }
             </div>
