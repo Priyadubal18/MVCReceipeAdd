@@ -8,7 +8,6 @@ export default class RecipeTab extends React.Component {
         super(props);
     }
 
-
     render() {
         return (
             <RecipePanel onClick={this.props.recipeClick.bind(this, this.props.recipeInfo)}>

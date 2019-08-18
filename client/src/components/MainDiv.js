@@ -6,8 +6,8 @@ export const MainHeader = styled.div`
   text-align :center
   width:100%;
   height:100%;
-  color:red;
-  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  color:black;
+  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;
 `;
 
 export const RecipePanel = styled.div`  
@@ -39,7 +39,7 @@ export const RecipeReview = styled.div`
   background-color:#000000b5;
   font-size: 18px;
   fonr-weight:500;
-  height:45px;
+  height:42px;
   margin-bottom:10px;
   margin-top:-6px;
   padding-top:5px;
@@ -57,4 +57,12 @@ export const RecipeReviewCount = styled.span`
   bottom:23px;
   left:45px;
   font-size:15px;
+`;
+
+export const BackButton = styled.button`
+width: 150px;
+height: 35px;
+background-color: #000000b5;
+color: #fff;
+border-radius: 3px;
 `;

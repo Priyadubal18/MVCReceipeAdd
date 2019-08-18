@@ -10,7 +10,7 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // get all recipe
-app.get('/allRecipesList', function (req, res) {
+app.get('/getallRecipes', function (req, res) {
     debugger;
     db.recipeData.getAllRecipe(function (data) {
         res.send(data);
