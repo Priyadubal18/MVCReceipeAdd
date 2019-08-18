@@ -14,7 +14,7 @@ export const RecipePanel = styled.div`
   text-align :center
   width:300px;
   height:380px;
-  background-color:white;
+  background-color:lightGray;
   display:inline-block;  
   margin:20px;
   cursor:pointer
@@ -65,4 +65,40 @@ height: 35px;
 background-color: #000000b5;
 color: #fff;
 border-radius: 3px;
+`;
+
+export const RecipeDiv = styled.div`
+max-width:1300px;
+margin:0px auto;
+`;
+
+export const RecipeHeader = styled.h1`
+font-family: "Lato Light",sans-serif;
+letter-spacing: -.02em;
+line-height: 1.1em;
+padding-bottom: 0;
+font-size: 40px;
+padding-bottom: 20px;
+border-bottom:1px solid gray;
+-webkit-font-smoothing: antialiased;
+color: #383838;
+font-weight: normal`;
+
+export const RecipeDetailImg = styled.img`
+  width:350px;
+  height:350px;
+  margin:20px;
+`;
+export const RecipeDetailShortDescription = styled.div`
+  width:820px;
+  height:300px;
+  font-family: "Lato",Aerial;
+  font-size: 20px;
+  display:inline-block;
+  position:relative;
+  bottom:200px;
+  margin:20px;
+  line-height: 1.62em;
+  background-color:lightGray;
+  padding:50px 20px 0px 20px;
 `;

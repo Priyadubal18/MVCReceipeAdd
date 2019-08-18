@@ -20,7 +20,6 @@ export default class RecipeJar extends React.Component {
         try {
             debugger;
             let response = await axios.get('/getallRecipes');
-            //console.log(response.data);
             this.setState({
                 RecipeList: response.data
             });
@@ -29,12 +28,20 @@ export default class RecipeJar extends React.Component {
         }
     }
 
-    recipeTabClick(recipe) {
-        debugger;
-        this.setState({
-            showRecipe: true,
-            recipeInfo: recipe
-        });
+    async recipeTabClick(recipe) {
+        try {
+            let response = await axios.get('/getRecipe', {
+                params: {
+                    ID: recipe.RecipeId
+                }
+            });
+            this.setState({
+                showRecipe: true,
+                recipeInfo: response.data[0]
+            });
+        } catch (ex) {
+            console.log(ex);
+        }
     }
 
     ToggleRecipe() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BackButton } from './MainDiv.js';
+import { BackButton, RecipeHeader, RecipeDiv, RecipeDetailImg, RecipeDetailShortDescription } from './MainDiv.js';
 import StarRatingComponent from 'react-star-rating-component';
 
 export default class RecipeDetails extends React.Component {
@@ -10,14 +10,17 @@ export default class RecipeDetails extends React.Component {
 
     render() {
         return (
-
             <div>
                 {
                     this.props.recipeData != null ?
-                        <div>
+                        <RecipeDiv>
                             <BackButton onClick={this.props.back.bind(this)}>BACK</BackButton>
-                            <h1>Hi this is recipe for  {this.props.recipeData.RecipeTitle}</h1>
-                        </div>
+                            <RecipeHeader>{this.props.recipeData.RecipeTitle}</RecipeHeader>
+                            <div>
+                                <RecipeDetailImg src={this.props.recipeData.RecipeImageURL}></RecipeDetailImg>
+                                <RecipeDetailShortDescription>{this.props.recipeData.ShortDescription}</RecipeDetailShortDescription>
+                            </div>
+                        </RecipeDiv>
                         : <div>Loading</div>
                 }
             </div>

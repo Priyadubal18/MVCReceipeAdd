@@ -15,16 +15,25 @@ dbConnection.connect(function (err) {
 
 const recipeData = {};
 recipeData.getAllRecipe = function (cb) {
-    let sql = `select RecipeTitle, RecipeImageURL, Count(r.RecipeId) NoOfReview, AVG(ReviewNumber) Review 
+    let sql = `select r.RecipeId, RecipeTitle, RecipeImageURL, Count(r.RecipeId) NoOfReview, AVG(ReviewNumber) Review 
           from recipe r inner join review rv on r.RecipeId = rv.RecipeId
           group by r.RecipeId `
     dbConnection.query(sql, (err, results) => {
         if (err) {
-            console.log("GetBuyerInfo", err)
+            console.log("getAllRecipe", err)
         }
         cb(results);
     });
 }
 
+recipeData.getRecipe = function (recipeId, cb) {
+    let sql = `select * from recipe where RecipeId = ${recipeId}`
+    dbConnection.query(sql, (err, results) => {
+        if (err) {
+            console.log("getRecipe", err)
+        }
+        cb(results);
+    });
+}
 
 module.exports.recipeData = recipeData;
