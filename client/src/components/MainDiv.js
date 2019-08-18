@@ -6,8 +6,8 @@ export const MainHeader = styled.div`
   text-align :center
   width:100%;
   height:100%;
-  color:gray;
-  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;
+  color:#e05050;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
 `;
 
 export const RecipePanel = styled.div`  
@@ -144,5 +144,15 @@ export const ReviewUserImage = styled.img`
 width:150px;
 height:100px
 float:left;
-font-size
+
+`
+
+export const ReviewUserName = styled.p`
+color:#c1c1c1
+`
+
+export const ReviewReviewDiv = styled.div`
+float:right;
+position:relative;
+bottom:110px;
 `

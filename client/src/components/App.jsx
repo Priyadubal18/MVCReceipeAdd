@@ -62,7 +62,7 @@ export default class RecipeJar extends React.Component {
     render() {
         return (
             <div>
-                <MainHeader>Recipes in a Jar </MainHeader>
+                <MainHeader>Recipes in a Jar !! </MainHeader>
                 {
                     !this.state.showRecipe ?
                         this.state.RecipeList.length > 0 ?
