@@ -6,7 +6,7 @@ export const MainHeader = styled.div`
   text-align :center
   width:100%;
   height:100%;
-  color:black;
+  color:gray;
   text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue, 0 -1px lightblue;
 `;
 
@@ -87,6 +87,7 @@ font-weight: normal`;
 export const RecipeDetailImg = styled.img`
   width:350px;
   height:350px;
+  float:left;
   margin:20px;
 `;
 export const RecipeDetailShortDescription = styled.div`
@@ -95,10 +96,53 @@ export const RecipeDetailShortDescription = styled.div`
   font-family: "Lato",Aerial;
   font-size: 20px;
   display:inline-block;
-  position:relative;
+  margin:20px;
+  line-height: 1.62em;
+  background-color:#d3d3d34a;
+  padding:50px 20px 0px 20px;
+`;
+
+export const RecipeInfoDiv = styled.div`
+  max-width:1300px; 
+  font-family: "Lato",Aerial;
+  font-size: 20px;  
   bottom:200px;
   margin:20px;
   line-height: 1.62em;
-  background-color:lightGray;
-  padding:50px 20px 0px 20px;
+  background-color:#d3d3d34a;
+  padding:20px;
 `;
+
+export const RecipeSubText = styled.h2`
+  font-family: "Lato",Aerial;
+  font-size: 25px;    
+  line-height: 1.62em;   
+  color:red;
+  padding-left:20px;
+`;
+
+
+export const ReviewMainDiv = styled.div`
+  font-family: "Lato",Aerial;
+  font-size: 20px;    
+  line-height: 1.62em;   
+  background-color:#d3d3d34a;
+  padding:20px;
+  max-width:1260px; 
+  margin:20px;
+`;
+
+export const RevieweDiv = styled.div`
+  background-color:#fff;
+  padding:20px;
+  border:1px solid black;
+  width:96%; 
+  margin-bottom:10px; 
+`;
+
+export const ReviewUserImage = styled.img`
+width:150px;
+height:100px
+float:left;
+font-size
+`

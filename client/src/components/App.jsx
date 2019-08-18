@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import { MainHeader } from './MainDiv.js';
+import { MainHeader, ReviewUserImage } from './MainDiv.js';
 import RecipeTab from './RecipeTab.jsx'
 import RecipeDetails from './RecipeDetails.jsx'
+import Logo from '../Img/Logo.jpg'
 
 export default class RecipeJar extends React.Component {
     constructor() {
@@ -10,7 +11,8 @@ export default class RecipeJar extends React.Component {
         this.state = {
             RecipeList: [],
             showRecipe: false,
-            recipeInfo: null
+            recipeInfo: null,
+            recipeReview: null
         }
         this.recipeTabClick = this.recipeTabClick.bind(this);
         this.ToggleRecipe = this.ToggleRecipe.bind(this);
@@ -35,9 +37,16 @@ export default class RecipeJar extends React.Component {
                     ID: recipe.RecipeId
                 }
             });
+            let review = await axios.get('/getReview', {
+                params: {
+                    ID: recipe.RecipeId
+                }
+            });
+
             this.setState({
                 showRecipe: true,
-                recipeInfo: response.data[0]
+                recipeInfo: response.data[0],
+                recipeReview: review.data
             });
         } catch (ex) {
             console.log(ex);
@@ -53,7 +62,7 @@ export default class RecipeJar extends React.Component {
     render() {
         return (
             <div>
-                <MainHeader>Recipes in a Jar</MainHeader>
+                <MainHeader>Recipes in a Jar </MainHeader>
                 {
                     !this.state.showRecipe ?
                         this.state.RecipeList.length > 0 ?
@@ -61,7 +70,7 @@ export default class RecipeJar extends React.Component {
                                 <RecipeTab key={index} recipeInfo={recipe} recipeClick={this.recipeTabClick} > </RecipeTab>
                             )) : <p>Loading...</p>
                         :
-                        <RecipeDetails recipeData={this.state.recipeInfo} back={this.ToggleRecipe}></RecipeDetails>
+                        <RecipeDetails recipeData={this.state.recipeInfo} recipeReview={this.state.recipeReview} back={this.ToggleRecipe}></RecipeDetails>
                 }
             </div>
         );

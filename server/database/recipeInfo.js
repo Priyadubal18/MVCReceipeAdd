@@ -27,7 +27,7 @@ recipeData.getAllRecipe = function (cb) {
 }
 
 recipeData.getRecipe = function (recipeId, cb) {
-    let sql = `select * from recipe where RecipeId = ${recipeId}`
+    let sql = `select * from recipe where  recipeId = ${recipeId}`
     dbConnection.query(sql, (err, results) => {
         if (err) {
             console.log("getRecipe", err)
@@ -36,4 +36,13 @@ recipeData.getRecipe = function (recipeId, cb) {
     });
 }
 
+recipeData.getReview = function (recipeId, cb) {
+    let sql = `select * from review where recipeId = ${recipeId}`
+    dbConnection.query(sql, (err, results) => {
+        if (err) {
+            console.log("getRecipe", err)
+        }
+        cb(results);
+    });
+}
 module.exports.recipeData = recipeData;
