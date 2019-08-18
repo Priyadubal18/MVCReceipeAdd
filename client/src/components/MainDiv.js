@@ -59,7 +59,7 @@ export const RecipeReviewCount = styled.span`
   font-size:15px;
 `;
 
-export const BackButton = styled.button`
+export const Button = styled.button`
 width: 150px;
 height: 35px;
 background-color: #000000b5;
@@ -155,4 +155,8 @@ export const ReviewReviewDiv = styled.div`
 float:right;
 position:relative;
 bottom:110px;
+`
+export const AddRecipeDiv = styled.div`
+margin:20px;
+display:block;
 `

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BackButton, RecipeHeader, RecipeDiv, RecipeDetailImg, RecipeDetailShortDescription, RecipeInfoDiv, RecipeSubText, ReviewMainDiv } from './MainDiv.js';
+import { Button, RecipeHeader, RecipeDiv, RecipeDetailImg, RecipeDetailShortDescription, RecipeInfoDiv, RecipeSubText, ReviewMainDiv } from './MainDiv.js';
 import Review from './Review.jsx';
 
 export default class RecipeDetails extends React.Component {
@@ -14,7 +14,7 @@ export default class RecipeDetails extends React.Component {
                 {
                     this.props.recipeData != null ?
                         <RecipeDiv>
-                            <BackButton onClick={this.props.back.bind(this)}>BACK</BackButton>
+                            <Button onClick={this.props.back.bind(this)}>HOME</Button>
                             <RecipeHeader>{this.props.recipeData.RecipeTitle}</RecipeHeader>
                             <RecipeDetailImg src={this.props.recipeData.RecipeImageURL}></RecipeDetailImg>
                             <RecipeDetailShortDescription>{this.props.recipeData.ShortDescription}</RecipeDetailShortDescription>
