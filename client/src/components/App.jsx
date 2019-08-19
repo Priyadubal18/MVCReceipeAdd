@@ -72,7 +72,8 @@ export default class RecipeJar extends React.Component {
     async HideForm() {
         try {
             this.setState({
-                addNewRecipe: false
+                addNewRecipe: false,
+                showRecipe: false
             });
             let response = await axios.get('/getallRecipes');
             this.setState({
