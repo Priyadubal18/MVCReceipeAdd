@@ -69,17 +69,24 @@ export default class RecipeJar extends React.Component {
         });
     }
 
-    HideForm() {
-        console.log("pp");
-        this.setState({
-            addNewRecipe: false
-        });
+    async HideForm() {
+        try {
+            this.setState({
+                addNewRecipe: false
+            });
+            let response = await axios.get('/getallRecipes');
+            this.setState({
+                RecipeList: response.data
+            });
+        } catch (ex) {
+            console.log(ex);
+        }
     }
 
     render() {
         return (
             <div>
-                <MainHeader>Recipes in a Jar !! </MainHeader>
+                <MainHeader>Recipes in a Jar </MainHeader>
 
                 {
                     !this.state.addNewRecipe ?

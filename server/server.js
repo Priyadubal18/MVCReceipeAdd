@@ -28,4 +28,12 @@ app.get('/getReview', function (req, res) {
     });
 });
 
+app.post('/addRecipe', function (req, res) {
+    console.log(req.body.addRecipe);
+    db.recipeData.addRecipe(req.body.addRecipe, function (data) {
+        res.send(data);
+    });
+});
+
+
 app.listen(port, () => console.log(`Product Buyer is  running on port 127.0.0.1:${port}`));

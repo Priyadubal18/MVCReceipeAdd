@@ -32,7 +32,7 @@ export default class RecipeAddForm extends React.Component {
         }))
     }
 
-    SubmitRecipe(event) {
+    async SubmitRecipe(event) {
         debugger;
         for (var key in this.state.RecipeObj) {
             if (this.state.RecipeObj[key] == "") {
@@ -42,11 +42,19 @@ export default class RecipeAddForm extends React.Component {
                 return;
             }
         }
-
         this.setState({
             errorMessage: ""
         });
-        console.log(event);
+        try {
+            let response = await axios.post('/addRecipe', {
+                addRecipe: this.state.RecipeObj
+            });
+            console.log(response);
+        } catch (ex) {
+            console.log(ex);
+        }
+        this.props.hideForm();
+
     }
 
     render() {

@@ -179,11 +179,10 @@ align-items: center;
 flex-direction: column;
 `
 export const FormLabel = styled.div`
-color:Red;
+color:black;
 font-size: 30px;    
 font-weight:500px;
 align-items: center;
-text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
 `
 export const FormInput = styled.input`
 width: 750px;
