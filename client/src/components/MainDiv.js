@@ -160,3 +160,49 @@ export const AddRecipeDiv = styled.div`
 margin:20px;
 display:block;
 `
+
+export const FormHeader = styled(RecipeSubText)`
+text-align:center;
+`
+
+
+export const FormMainDiv = styled.div`
+max-width:1300px;
+margin:0px auto;
+height:1000px;
+background-color:#d3d3d34a;
+`
+export const FormDiv = styled.div`
+max-width:800px;
+margin:0px auto;
+align-items: center;
+flex-direction: column;
+`
+export const FormLabel = styled.div`
+color:Red;
+font-size: 30px;    
+font-weight:500px;
+align-items: center;
+text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+`
+export const FormInput = styled.input`
+width: 750px;
+margin:20px 0px;
+height: 35px;
+border: 1px solid #ccc;
+background-color: #fff;
+padding:1px 5px
+`
+
+export const FormTextArea = styled.textarea`
+width: 750px;
+margin:20px 0px;
+height: 80px;
+border: 1px solid #ccc;
+background-color: #fff;
+padding:1px 5px
+`
+
+export const FormError = styled.p`
+color:red;
+`
